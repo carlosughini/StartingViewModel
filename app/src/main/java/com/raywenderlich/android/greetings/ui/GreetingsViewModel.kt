@@ -28,5 +28,7 @@ class GreetingsViewModel : ViewModel() {
         this.showFormal = showFormal
     }
 
+    fun greeting() = if (showFormal) language.greeting.formal else language.greeting.informal
+
 
 }

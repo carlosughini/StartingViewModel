@@ -79,8 +79,7 @@ class GreetingsActivity : AppCompatActivity() {
   }
 
   private fun configureGreeting() {
-    val language = languageSpinner.selectedItem as Language
-    greeting.text = if (showFormal) language.greeting.formal else language.greeting.informal
-    count.text = resources.getQuantityString(R.plurals.greetings, greetingCount, greetingCount)
+    greeting.text = viewModel.greeting()
+    count.text = resources.getQuantityString(R.plurals.greetings, viewModel.greetingCount, viewModel.greetingCount)
   }
 }
